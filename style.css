@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-y: hidden;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body,
+html {
+    height: 100%;
+}
+
+body {
+    background-color: #3b2000;
+}
+
+.wrapper {
+    height: 100%;
+}
+
+.shelf {
+    height: 30%;
+    margin: 20px;
+    margin-bottom: 0px;
+    border: 10px solid #180d00;
+    background-color: #241400;
+    box-shadow: inset 0 0 20px black;
+
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+
+.description {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    width: fit-content;
+    text-align: center;
+}
+
+.book {
+    height: 250px;
+    width: fit-content;
+    display: inline-block;
+    cursor: pointer;
+    box-shadow: inset 0 0 20px black;
+    transition: .3s transform, .3s box-shadow;
+}
+
+.book:hover {
+    transform: rotate(-3deg);
+    box-shadow: inset 0 0 20px transparent;
+}
+
+.book p {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+}
+
+.bookTitle {
+    margin-bottom: 10px;
+}
+
+.authors {
+    font-size: x-small;
+}
+
+.panel {
+    backdrop-filter: blur(10px);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #00000080;
+    z-index: 99;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: .3s opacity, .3s visibility;
+}
+
+.panel.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.panelWrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+input,select,button,option {
+    color: black;
+    padding: 10px;
+    margin: 10px;
+}

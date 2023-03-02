@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookshelf</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="panel" id="main">
+        <div class="panelWrapper">
+            <h1 id="bookName">BookName</h1>
+            <p id="bookAuthors">BookAuthors</p><br>
+
+            <img id="bookCape" width="250px" height="400px"><br><br>
+
+            <p>Shelf:</p>
+            <select id="bookSelect">
+                <option value="0">Reading</option>
+                <option value="1">Want to Read</option>
+                <option value="2">Stopped Reading</option>
+            </select><br>
+
+            <button id="bookRemove">Remove</button>
+            <button id="bookClose">Close</button>
+        </div>
+    </div>
+
+    <div class="panel" id="newBook">
+        <div class="panelWrapper">
+            <h1>Add New Book</h1>
+
+            <form id="addNewBook">
+                *<input placeholder="Book Title..." type="text" name="title"><br>
+                *<input placeholder="Authors (split by ',')" type="text" name="authors"><br>
+                <input placeholder="Categories (split by ',')" type="text" name="categories"><br>
+                <input placeholder="Image (URL)" type="url" name="image"><br>
+                <input placeholder="Color" type="text" name="color"><br>
+
+                <button id="newBookAdd">Add</button>
+            </form><br>
+
+            <button id="newBookClose">Close</button>
+        </div>
+    </div>
+
+    <div class="wrapper">
+        <div class="reading shelf">
+            <p class="description" special>Reading</p>
+
+            <div style="background: white;" class="book newBook" index="0" shelf="0" special>
+                <img src="assets/book-stripes.png">
+                <p style="color: black;" class="bookTitle">New Book</p>
+                <p style="color: black;" class="authors">Specials</p>
+            </div>
+        </div>
+
+        <div class="wantToRead shelf">
+            <p class="description" special>Want to Read</p>
+
+            <div style="background: white;" class="book newBook" index="0" shelf="1" special>
+                <img src="assets/book-stripes.png">
+                <p style="color: black;" class="bookTitle">New Book</p>
+                <p style="color: black;" class="authors">Specials</p>
+            </div>
+        </div>
+
+        <div class="stoppedReading shelf">
+            <p class="description" special>Stopped Reading</p>
+
+            <div style="background: white;" class="book newBook" index="0" shelf="2" special>
+                <img src="assets/book-stripes.png">
+                <p style="color: black;" class="bookTitle">New Book</p>
+                <p style="color: black;" class="authors">Specials</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
