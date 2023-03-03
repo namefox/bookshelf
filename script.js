@@ -17,7 +17,11 @@ fetch("./assets/colors.json").then(response => response.json()).then((colors) =>
     if (color.startsWith("#") && (color.length == 3 || color.length == 6))
         resolve(hexToRgb(color));
 
-    resolve();
+    resolve({
+        r: 128,
+        g: 128,
+        b: 128
+    });
 });
     });
 };
@@ -142,11 +146,15 @@ bookRemove.addEventListener("click", () => {
 addNewBook.addEventListener("submit", e => {
     e.preventDefault();
 
-    const title = addNewBook.querySelector("[name=title]").value;
-    const authors = addNewBook.querySelector("[name=authors]").value;
-    const categories = addNewBook.querySelector("[name=categories]").value;
-    const image = addNewBook.querySelector("[name=image]").value;
-    const color = addNewBook.querySelector("[name=color]").value;
+    let title = addNewBook.querySelector("[name=title]").value;
+    let authors = addNewBook.querySelector("[name=authors]").value;
+    let categories = addNewBook.querySelector("[name=categories]").value;
+    let image = addNewBook.querySelector("[name=image]").value;
+    let color = addNewBook.querySelector("[name=color]").value;
+
+    if (!categories) categories = "all";
+    if (!image) image = "assets/cover.png";
+    if (!color) color = "grey";
 
     if (!title || !authors) return;
     console.log("[Bookshelf] Adding new book: " + title);
